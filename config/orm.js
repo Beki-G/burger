@@ -67,7 +67,7 @@ const orm = {
         let querystring = "UPDATE "+table;
 
         querystring+= " SET " + objColVal(objColVals);
-        querystring+= " WHERE " + condition;
+        querystring+= " WHERE id=" + condition;
 
         connection.query(querystring, (err, result)=>{
             if (err) throw err;

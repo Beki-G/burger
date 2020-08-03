@@ -49,13 +49,15 @@ const orm = {
         querystring +=  "(";
         querystring += cols.toString();
         querystring += ") VALUES (";
-        querystring += printQuestionMarks(vals);
+        querystring += printQuestionMarks(vals.length);
         querystring += ") ";
 
         console.log("querystring: ", querystring);
 
         connection.query(querystring, vals, (err, result)=>{
             if (err) throw err;
+
+            console.log("Insert one result:", result)
             cb(result)
         })
 

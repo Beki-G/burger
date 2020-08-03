@@ -12,6 +12,7 @@ const burger= {
     },
 
     create: function(col, vals, cb){
+        console.log("the burger in models/burger.js")
         orm.insertOne("burgers", col, vals, function(res){
             cb(res)
         } )

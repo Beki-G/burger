@@ -1,5 +1,6 @@
 const express = require("express");
 const burger = require("../models/burger")
+const path = require("path")
 
 const router = express.Router()
 
@@ -7,14 +8,23 @@ const router = express.Router()
 router.get("/", function(req, res){
     burger.all(function(data){
         const hbsObject = {
-            bugers: data
+            burgers: data
         };
         console.log(hbsObject);
         res.render("index", hbsObject) 
     })
 })
 
+router.get("/assets/css/styles.css", (req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/assets/css/styles.css"))
+})
+
+router.get("/assets/js/burger.js", (req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/assets/js/burger.js"))
+})
+
 router.post("/api/burgers", (req, res)=>{
+    console.log(req.body.burger_name)
     burger.create(["burger_name"], [req.body.burger_name], function(result){
         res.json({ id: result.insertId })
     })

@@ -23,6 +23,10 @@ router.get("/assets/js/burger.js", (req, res)=>{
     res.sendFile(path.join(__dirname, "../public/assets/js/burger.js"))
 })
 
+router.get("/public/assets/img/burger.png", (req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/assets/img/burger.png"))
+})
+
 router.post("/api/burgers", (req, res)=>{
     console.log(req.body.burger_name)
     burger.create(["burger_name"], [req.body.burger_name], function(result){

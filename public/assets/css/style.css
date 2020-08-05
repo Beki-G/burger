@@ -4,17 +4,44 @@ margin: 5px;
 background: #faebd7;
 }
 
+.burgers-list {
+    background: #ffd49c
+}
+
+body {
+    width: 100%;
+    background-color: coral;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+
 .label {
 font-weight: bold;
 }
 
-.create-update-form {
-padding: 5px;
-margin: 5px;
-background: aqua;
+.create-form {
+    padding: 5px;
+    background: #ffd49c;
 }
 
 .form-group {
-margin-bottom: 5px;
-background-color: coral;
+    margin-bottom: 5px;
+}
+
+.header {
+    /* font-size: 3em; */
+    font-weight: bold;
+}
+ 
+.section-header {
+    font-size: 2em;;
+}
+
+img {
+    max-height: 200px;
+    width: auto;
+    margin:auto;
 }

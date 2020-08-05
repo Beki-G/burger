@@ -1,31 +1,52 @@
-<h1>Burgers</h1>
+<h1 class= "header text-5xl text-center">Burgers</h1>
 
-<h2>Burgers to eat!</h2>
+<br>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
+<div class="flex content-center">
+    <img src="/public/assets/img/burger.png" alt="Smiling Burger" >
+</div>
+
+<br><br>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div class="burgers-list rounded">
+        <h2 class="section-header text-2xl text-center">Burgers to eat!</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
             {{> burgers/burger-block devoured=true}}
-        {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Burgers Devoured!</h2>
-
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{> burgers/burger-block devoured=false}}
-        {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-    <div class="form-group">
-        <label for="bu">Burger Name:</label>
-        <input type= "text" id="bu" name="name">
+            {{/unless}}
+            {{/each}}
+        </ul>
     </div>
 
-    <button type="submit">Add burger</button>
+    <div class="burgers-list rounded">
+        <h2 class="section-header text-2xl text-center">Burgers Devoured!</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/if}}
+            {{/each}}
+        </ul>
+
+    </div>
+</div>
+
+<br>
+
+<form class="create-form rounded">
+
+    <h2  class="section-header text-3xl">Add a burger</h2>
+
+    <div class="form-group">
+        <label for="bu">Burger Name:</label>
+        <input type="text" id="bu" name="name">
+        <button type="submit" class = "bg-pink-500 hover:bg-pink-700 text-white py-2 px-4 rounded-full">Add burger</button>
+    
+    </div>
+
 </form>
